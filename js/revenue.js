@@ -4,7 +4,7 @@ google.charts.load('current', {
 google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
-    $.get("Revenue.csv", function (csvString) {
+    $.get("./data/Revenue.csv", function (csvString) {
         var arrayData = $.csv.toArrays(csvString, {
             onParseValue: $.csv.hooks.castToScalar
         });
@@ -15,6 +15,10 @@ function drawChart() {
             title: 'Revenue',
             legend: {
                 position: 'bottom'
+            },
+            hAxis: {
+                title : "Year",
+                format : 'year '
             },
             vAxis: {
                 title: "Tax value",

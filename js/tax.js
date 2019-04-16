@@ -2,7 +2,7 @@ google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
-  $.get("Bulgaria.csv", function(csvString) {
+  $.get("./data/Bulgaria-tax.csv", function(csvString) {
         var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});          
         var data = google.visualization.arrayToDataTable(arrayData);
         console.log(data);
@@ -11,6 +11,10 @@ function drawChart() {
         var options = {
           title: 'Bulgaria',
           legend: { position: 'bottom' },
+          hAxis: {
+            title : "Year",
+            format : 'year '
+          },
           vAxis: { 
             title: "Tax value", 
             viewWindowMode:'explicit',
@@ -23,7 +27,7 @@ function drawChart() {
   });
   
   document.getElementById('Greece').addEventListener('click', function(){
-    $.get("Greece.csv", function(csvString) {
+    $.get("./data/Greece-tax.csv", function(csvString) {
         var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});          
         var data = google.visualization.arrayToDataTable(arrayData);
         console.log(data);
@@ -32,6 +36,10 @@ function drawChart() {
         var options = {
           title: 'Greece',
           legend: { position: 'bottom' },
+          hAxis: {
+            title : "Year",
+            format : 'year '
+          },
           vAxis: { 
             title: "Tax value", 
             viewWindowMode:'explicit',
@@ -44,7 +52,7 @@ function drawChart() {
   });})
 
   document.getElementById('Bulgaria').addEventListener('click', function(){
-    $.get("Bulgaria.csv", function(csvString) {
+    $.get("./data/Bulgaria-tax.csv", function(csvString) {
         var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});          
         var data = google.visualization.arrayToDataTable(arrayData);
         console.log(data);
@@ -53,6 +61,10 @@ function drawChart() {
         var options = {
           title: 'Bulgaria',
           legend: { position: 'bottom' },
+          hAxis: {
+            title : "Year",
+            format : 'year '
+          },
           vAxis: { 
             title: "Tax value", 
             viewWindowMode:'explicit',
@@ -65,7 +77,7 @@ function drawChart() {
   });})
 
   document.getElementById('Romania').addEventListener('click', function(){
-    $.get("Romania.csv", function(csvString) {
+    $.get("./data/Romania-tax.csv", function(csvString) {
         var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});          
         var data = google.visualization.arrayToDataTable(arrayData);
         console.log(data);
@@ -74,6 +86,10 @@ function drawChart() {
         var options = {
           title: 'Romania',
           legend: { position: 'bottom' },
+          hAxis: {
+            title : "Year",
+            format : 'year '
+          },
           vAxis: { 
             title: "Tax value", 
             viewWindowMode:'explicit',
@@ -86,7 +102,7 @@ function drawChart() {
   });})
 
   document.getElementById('Poland').addEventListener('click', function(){
-    $.get("Poland.csv", function(csvString) {
+    $.get("./data/Poland-tax.csv", function(csvString) {
         var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});          
         var data = google.visualization.arrayToDataTable(arrayData);
         console.log(data);
@@ -95,6 +111,10 @@ function drawChart() {
         var options = {
           title: 'Poland',
           legend: { position: 'bottom' },
+          hAxis: {
+            title : "Year",
+            format : 'year '
+          },
           vAxis: { 
             title: "Tax value", 
             viewWindowMode:'explicit',
@@ -107,7 +127,7 @@ function drawChart() {
   });})
 
   document.getElementById('Russia').addEventListener('click', function(){
-    $.get("Russia.csv", function(csvString) {
+    $.get("./data/Russia-tax.csv", function(csvString) {
         var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});          
         var data = google.visualization.arrayToDataTable(arrayData);
         console.log(data);
@@ -116,8 +136,12 @@ function drawChart() {
         var options = {
           title: 'Russia',
           legend: { position: 'bottom' },
+          hAxis: {
+            title : "Year",
+            format : 'year '
+          },
           vAxis: { 
-            title: "GDP value", 
+            title: "Tax value", 
             viewWindowMode:'explicit',
             viewWindow:{
             min:0
